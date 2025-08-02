@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Detalle de Usuario</title>
+</head>
+<body>
+<h2>Detalle del Usuario</h2>
+<ul>
+  <li><strong>ID:</strong> <span th:text="${usuarioData.id}">1</span></li>
+  <li><strong>Email:</strong> <span th:text="${usuarioData.email}">email</span></li>
+  <li><strong>Rol:</strong> <span th:text="${usuarioData.administrador} ? 'ADMIN' : 'USER'">Rol</span></li>
+  <li><strong>Nombre:</strong> <span th:text="${usuarioData.nombre} ?: 'No definido'">nombre</span></li>
+  <li><strong>Fecha de nacimiento:</strong>
+    <span th:text="${#dates.format(usuarioData.fechaNacimiento, 'dd-MM-yyyy')} ?: 'No definida'"></span>
+  </li>
+</ul>
+
+<a href="/registrados">Volver al listado</a>
+</body>
+</html>
